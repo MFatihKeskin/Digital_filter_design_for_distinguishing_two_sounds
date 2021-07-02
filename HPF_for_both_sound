@@ -1,6 +1,7 @@
-# Tasarlanan AGF gitar sesini geçirmeli, bağlama sesini söndürmelidir. 
-# Bu nedenle aynı AGF'yi her iki sese deneyip doğruluğunu görelim. 
+# Tasarlanan YGF bağlama sesini geçirmeli, gitar sesini söndürmelidir. 
+# Bu nedenle aynı YGF'yi her iki sese deneyip doğruluğunu görelim. 
 # Emin olmak için çıkış işaretlerinin enerjileri de hesaplanmıştır.
+
 
 import matplotlib.pyplot as plt # grafik çizimi için gerekli kütüphanenin aktifleştirilmesi
 import numpy as np
@@ -23,7 +24,7 @@ display(Audio(baglama, rate=Fs1))
 #---------------------------------------------------------------------------------------------------------------------
 
 # FIR filtre ekleme (copy from last lab report)
-filter_data = loadmat('B12_SesGrubu01_agf.mat') # pyfda'dan elde edilen filtreyi yükle
+filter_data = loadmat('B12_SesGrubu01_ygf.mat') # pyfda'dan elde edilen filtreyi yükle
 Coeffs = filter_data['ba'].astype(np.float64) # katsayıları alın ve bunları float'a dönüştürün
 b = Coeffs[0,:] # first column is b
 a=np.zeros(len(b)) # FIR filtre olduğu için
@@ -40,58 +41,61 @@ plt.xlabel('frequency x$\pi$ rad/sample')
 
 #---------------------------------------------------------------------------------------------------------------------
 
-# Gitar sesinin AGF'den geçirmek
+# Gitar sesinin YGF'den geçirmek
 
-filtered_gitar = sgnl.lfilter(b, a, gitar)  # katsayıları kullanarak, sinyali filtrenin girişine uyguladık.
-plt.figure()
+filtered_gitar = sgnl.lfilter(b, a, gitar) # katsayıları kullanarak, sinyali filtrenin girişine uyguladık.
+plt.figure() 
 plt.stem(abs(filtered_gitar)) # genliğini çiz
 plt.xlabel("n") # grafiğin x ekseninin isimlendirilmesi
 plt.ylabel("|Y[n]|") # grafiğin y ekseninin isimlendirilmesi
-plt.title("Filtre cıkısında gitar için $ |Y[n]| $") # grafiğin y ekseninin isimlendirilmesi
+plt.title("Filtre cıkısında gitar için $ |Y[n]| $") # grafiğin başlığının isimlendirilmesi
 
 w = np.arange(-np.pi, np.pi, 2*np.pi/N_gitar) # omega ekseninin -pi ile +pi arasında tanımlanması
 gitar_yw = np.fft.fftshift(np.fft.fft(filtered_gitar,N_gitar)/N_gitar) # ayrık zamanlı işaretin Fourier transformu
 
 plt.figure()
-plt.stem(w*Fs/(2*np.pi),abs(gitar_yw)) # X(w) işaretinin grafiğinin çizdirilmesi
+plt.stem(w*Fs/(2*np.pi),abs(gitar_yw)) # Y(w) işaretinin grafiğinin çizdirilmesi
+
 plt.xlabel("$Hz$") # grafiğin x ekseninin isimlendirilmesi
 plt.ylabel("$|Y(\omega)|$") # grafiğin y ekseninin isimlendirilmesi
 plt.title("Filtre cıkısında gitar için $|Y(\omega)|$") # grafiğin y ekseninin isimlendirilmesi
 
 #---------------------------------------------------------------------------------------------------------------------
 
-# Baglama sesinin AGF'den geçirmek
+# Baglama sesinin YGF'den geçirmek
 
 filtered_baglama = sgnl.lfilter(b, a, baglama) # katsayıları kullanarak, sinyali filtrenin girişine uyguladık.
 plt.figure()
 plt.stem(abs(filtered_baglama)) # genliğini çiz
 plt.xlabel("n") # grafiğin x ekseninin isimlendirilmesi
 plt.ylabel("|Y[n]|") # grafiğin y ekseninin isimlendirilmesi
-plt.title("Filtre cıkısında baglama için $ |Y[n]| $") # grafiğin y ekseninin isimlendirilmesi
+plt.title("Filtre cıkısında baglama için $ |Y[n]| $") # grafiğin başlığının isimlendirilmesi
 
-w1 = np.arange(-np.pi, np.pi, 2*np.pi/N_gitar) # omega ekseninin -pi ile +pi arasında tanımlanması
-baglama_yw = np.fft.fftshift(np.fft.fft(filtered_baglama,N_gitar)/N_gitar) # ayrık zamanlı işaretin Fourier transformu
+w1 = np.arange(-np.pi, np.pi, 2*np.pi/N_baglama) # omega ekseninin -pi ile +pi arasında tanımlanması
+baglama_yw = np.fft.fftshift(np.fft.fft(filtered_baglama,N_baglama)/N_baglama) # ayrık zamanlı işaretin Fourier transformu
 
 plt.figure()
-plt.stem(w1*Fs1/(2*np.pi),abs(baglama_yw)) # X(w) işaretinin grafiğinin çizdirilmesi
+plt.stem(w1*Fs1/(2*np.pi),abs(baglama_yw)) # Y(w) işaretinin grafiğinin çizdirilmesi
+
 plt.xlabel("$Hz$") # grafiğin x ekseninin isimlendirilmesi
 plt.ylabel("$|Y(\omega)|$") # grafiğin y ekseninin isimlendirilmesi
-plt.title("Filtre cıkısında baglama için $|Y(\omega)|$") # grafiğin y ekseninin isimlendirilmesi
+plt.title("Filtre cıkısında baglama için $|Y(\omega)|$") # grafiğin başlığının isimlendirilmesi
 
 
 #---------------------------------------------------------------------------------------------------------------------
 
-# 2. Filtreden geçmiş sesleri dinlemek
+# Yüksek Geçiren Filtreden geçmiş sesleri dinlemek
+
 # Her ikisini de kolayca dinleyip karşılaştırmak için ardarda eklendi 
 from IPython.lib.display import Audio
 
-print('AGF cıkısındaki gitar sesi:')
+print('YGF cıkısındaki gitar sesi:')
 display(Audio(filtered_gitar, rate=Fs))
 
 print('Orjinal gitar sesi:')
 display(Audio(gitar, rate=Fs))
 
-print('AGF cıkısındaki baglama sesi:')
+print('YGF cıkısındaki baglama sesi:')
 display(Audio(filtered_baglama, rate=Fs1))
 
 print('Orjinal baglama sesi:')
@@ -133,5 +137,6 @@ else:
     print("baglama=",baglamaenerji)
     print("Enerjiler arasındaki fark:",abs(gitarenerji-baglamaenerji))
     print("Baglama sesi duyulmaktadır.")
+    
     
     
