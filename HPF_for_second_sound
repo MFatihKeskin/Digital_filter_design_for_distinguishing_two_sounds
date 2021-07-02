@@ -1,0 +1,92 @@
+# Aşağıdaki YGF gitar sesinin sönümlenmesi için tasarlanmıştır.
+
+import matplotlib.pyplot as plt # grafik çizimi için gerekli kütüphanenin aktifleştirilmesi
+import numpy as np
+from scipy.io.wavfile import read # Ses dosyasının okunması için gerekli kütüphane
+%matplotlib notebook
+from scipy.fft import fft, ifft
+import scipy
+from scipy.io import loadmat
+from IPython.lib.display import Audio
+
+Fs, x = read("B12_gitar01.wav") # dosyayı oku
+print("x.shape=",x.shape) # x'in boyut bilgisi
+print("Fs=",Fs)
+
+gitar = x[:,1] # x'in sadece ilk sütunundaki örnekler alınmıştır (1. kanalın örnekleri)
+N_gitar = len(x)
+n=np.arange(0,N_gitar) # örnekleme indisini ses dosyasının boyutuna eşitle
+plt.figure()
+plt.stem(n,gitar) # gitar[n] işaretinin grafiğinin çizdirilmesi
+plt.title("gitar[n]") # grafiğin başlığının isimlendirilmesi
+plt.xlabel("n (örnek)") # grafiğin x ekseninin isimlendirilmesi
+plt.ylabel("gitar[n]") # grafiğin y ekseninin isimlendirilmesi
+
+print('gitar:')
+display(Audio(gitar, rate=Fs))
+
+#----------------------------------------------------------------------------------------------------------
+
+# gitar sinyallinin Foutier Transformu
+w = np.arange(-np.pi, np.pi, 2*np.pi/N_gitar) # omega ekseninin -pi ile +pi arasında tanımlanması
+xw = np.fft.fftshift(np.fft.fft(gitar,N_gitar)/N_gitar) # ayrık zamanlı işaretin Fourier transformu
+
+plt.figure()
+plt.stem(w*Fs/(2*np.pi),abs(xw)) # X(w) işaretinin grafiğinin çizdirilmesi
+
+plt.xlabel("$Hz$") # grafiğin x ekseninin isimlendirilmesi
+plt.ylabel("$|X(\omega)|$") # grafiğin y ekseninin isimlendirilmesi
+plt.title("Gitar için $|X(\omega)|$") # grafiğin y ekseninin isimlendirilmesi
+
+#----------------------------------------------------------------------------------------------------------
+
+# FIR filtre ekleme (copy from last lab report)
+import scipy.signal as sgnl
+
+filter_data = loadmat('B12_SesGrubu01_ygf.mat') # pyfda'dan elde edilen filtreyi yükle
+Coeffs = filter_data['ba'].astype(np.float64) # katsayıları alın ve bunları float'a dönüştürün
+b = Coeffs[0,:] # first column is b
+a=np.zeros(len(b)) # FIR filtre olduğu için
+a[0]=1 # FIR filtre olduğu için
+
+# Frekans alanı grafiğini gösterelim
+w3, Hw = sgnl.freqz(b,a)
+Hw_mag = abs(Hw)
+Hw_phs = np.unwrap(np.angle(Hw)) # Değerler arasındaki deltaları 2*pi tamamlayıcı olarak değiştirerek aç
+fig, (ax1, ax2) = plt.subplots(2)
+ax1.plot(w3*Fs/(2*np.pi), Hw_mag) # filtrenin genliğini çizdir
+ax2.plot(w3*Fs/(2*np.pi), Hw_phs), plt.ylabel('degrees') # filtrenin fazını çizdir
+plt.xlabel('frequency x$\pi$ rad/sample')
+
+#---------------------------------------------------------------------------------------------------------------------
+
+# gitar sesinin yüksek geçiren filtreden geçirmek
+
+filtered_gitar = sgnl.lfilter(b, a, gitar) # katsayıları kullanarak, sinyali filtrenin girişine uyguladık.
+plt.figure()
+plt.stem(abs(filtered_gitar)) # genliğini çiz
+plt.xlabel("n") # grafiğin x ekseninin isimlendirilmesi
+plt.ylabel("Y[n]") # grafiğin y ekseninin isimlendirilmesi
+plt.title("Filtre cıkısında gitar için $ |Y[n]| $") # grafiğin başlığının isimlendirilmesi
+
+w = np.arange(-np.pi, np.pi, 2*np.pi/N_gitar) # omega ekseninin -pi ile +pi arasında tanımlanması
+gitar_yw = np.fft.fftshift(np.fft.fft(filtered_gitar,N_gitar)/N_gitar) # ayrık zamanlı işaretin Fourier transformu
+
+plt.figure()
+plt.stem(w*Fs/(2*np.pi),abs(gitar_yw)) # Y(w) işaretinin grafiğinin çizdirilmesi
+
+plt.xlabel("$Hz$") # grafiğin x ekseninin isimlendirilmesi
+plt.ylabel("$|Y(\omega)|$") # grafiğin y ekseninin isimlendirilmesi
+plt.title("Filtre cıkısında gitar için $|Y(\omega)|$") # grafiğin başlığının isimlendirilmesi
+
+#---------------------------------------------------------------------------------------------------------------------
+ 
+#Yüksek Geçiren Filtreden geçmiş sesleri dinlemek (Bu filtre bağlama sesini sönümlemesi içindir)
+
+# Her ikisini de kolayca dinleyip karşılaştırmak için ardarda eklendi 
+from IPython.lib.display import Audio
+
+print('YGF cıkısındaki gitar sesi:')
+display(Audio(filtered_gitar, rate=Fs))
+print('Orjinal gitar sesi:')
+display(Audio(gitar, rate=Fs))
