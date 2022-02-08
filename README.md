@@ -50,10 +50,6 @@ Her ses grubu için ayrı ayrı analizler yapılmıştır. İlgili grafik ve fil
 
 ![image](https://user-images.githubusercontent.com/70964563/152940831-1ed9581a-ea4a-450e-914c-461c4ece830d.png)
 
-1.ses grubu için tasarlanan alçak geçiren filtrenin parametreleri aşağıda verilen tabloda (Tablo 2.) görülmektedir:
-
-![image](https://user-images.githubusercontent.com/70964563/152940911-1a97d7e7-cfce-48aa-9a3e-4ac5244c45b2.png)
-
 Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 4 ve Şekil 5’de görülmektedir.
 
 ![image](https://user-images.githubusercontent.com/70964563/152939525-5cabe2de-f0a1-4663-a4ae-a62ac87d9629.png)
@@ -63,6 +59,9 @@ Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevapla
 
 ![image](https://user-images.githubusercontent.com/70964563/152939619-3b5395a0-cf6e-4641-92e5-82454b38e6c4.png)
 
+1.ses grubu için tasarlanan alçak geçiren filtrenin parametreleri aşağıda verilen tabloda (Tablo 2.) görülmektedir:
+
+![image](https://user-images.githubusercontent.com/70964563/152940911-1a97d7e7-cfce-48aa-9a3e-4ac5244c45b2.png)
 
 Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 7 ve Şekil 8‘de görülmektedir.
 
@@ -84,6 +83,10 @@ Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplar
 
 ![image](https://user-images.githubusercontent.com/70964563/152939894-66e20460-4883-46fa-b55b-6efcbee62060.png)
 
+2.ses grubu için tasarlanan alçak geçiren filtrenin parametreleri aşağıda verilen tabloda (Tablo 3.) görülmektedir:
+
+![image](https://user-images.githubusercontent.com/70964563/152942560-eb931d34-9e36-4088-9dbd-6f9728d424df.png)
+
 Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 12 ve Şekil 13’de görülmektedir.
 
 ![image](https://user-images.githubusercontent.com/70964563/152940097-cb3493a6-6ad9-4655-8325-951f273121cd.png)
@@ -93,6 +96,10 @@ Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplar
 2.ses grubu için gitar sesinin yüksek oranda bozulmaya uğramadan geçtiği, lakin bağlama sesinin bozulmaya uğradığı filtrenin, yüksek geçiren filtre olmasına karar verilmiştir. pyFDA arayüzünde tasarlanan filtrenin şekli Şekil 14’te görülmektedir.
 
 ![image](https://user-images.githubusercontent.com/70964563/152940178-13082ebb-3ed9-489b-a7f6-d16b8281ec45.png)
+
+2.ses grubu için tasarlanan yüksek geçiren filtrenin parametreleri aşağıda verilen tabloda (Tablo 4.) görülmektedir:
+
+![image](https://user-images.githubusercontent.com/70964563/152942649-310ca091-c515-4986-a6c9-969fca68bbda.png)
 
 Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 15 ve Şekil 16‘da görülmektedir.
 
