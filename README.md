@@ -56,11 +56,18 @@ Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevapla
 ![image](https://user-images.githubusercontent.com/70964563/152939619-3b5395a0-cf6e-4641-92e5-82454b38e6c4.png)
 
 
-
 Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 7 ve Şekil 8‘de görülmektedir.
 
 ![image](https://user-images.githubusercontent.com/70964563/152939656-b79651bc-cb5e-4c8b-a9aa-2aad86a4be4c.png)
 ![image](https://user-images.githubusercontent.com/70964563/152939689-b0b45357-5c46-4416-b7c5-bbd3dc6871b6.png)
+
+1.ses grubu için tasarlanan yüksek geçiren filtrenin parametreleri aşağıda verilen tabloda (Tablo 1.) görülmektedir:
+
+![image](https://user-images.githubusercontent.com/70964563/152940831-1ed9581a-ea4a-450e-914c-461c4ece830d.png)
+
+1.ses grubu için tasarlanan alçak geçiren filtrenin parametreleri aşağıda verilen tabloda (Tablo 2.) görülmektedir:
+
+![image](https://user-images.githubusercontent.com/70964563/152940911-1a97d7e7-cfce-48aa-9a3e-4ac5244c45b2.png)
 
 
 #### • İkinci Ses Grubu (Serkan Nişancı – Farketmez Hesaplaşırız)
@@ -75,23 +82,45 @@ Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplar
 
 ![image](https://user-images.githubusercontent.com/70964563/152939894-66e20460-4883-46fa-b55b-6efcbee62060.png)
 
-
 Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 12 ve Şekil 13’de görülmektedir.
+
+![image](https://user-images.githubusercontent.com/70964563/152940097-cb3493a6-6ad9-4655-8325-951f273121cd.png)
+![image](https://user-images.githubusercontent.com/70964563/152940131-c43f1386-a0a3-4dca-95c3-42b4060d9332.png)
 
 
 2.ses grubu için gitar sesinin yüksek oranda bozulmaya uğramadan geçtiği, lakin bağlama sesinin bozulmaya uğradığı filtrenin, yüksek geçiren filtre olmasına karar verilmiştir. pyFDA arayüzünde tasarlanan filtrenin şekli Şekil 14’te görülmektedir.
 
+![image](https://user-images.githubusercontent.com/70964563/152940178-13082ebb-3ed9-489b-a7f6-d16b8281ec45.png)
 
 Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 15 ve Şekil 16‘da görülmektedir.
+
+![image](https://user-images.githubusercontent.com/70964563/152940211-901197a1-a7e9-4b64-b7f9-647741886e70.png)
+![image](https://user-images.githubusercontent.com/70964563/152940228-d9c19b62-f216-442c-b224-63609432110d.png)
 
 
 #### • Üçüncü Ses Grubu (Müslüm Gürses – İtirazım Var)
 3.ses grubundaki gitar ve bağlamaya ait ses işaretlerinin frekans cevaplarına ait genlik grafikleri Şekil 17 ve Şekil 18’de görülmektedir.
+
+![image](https://user-images.githubusercontent.com/70964563/152940467-5c878adc-2de7-4241-a3a4-5febdf51a7aa.png)
+![image](https://user-images.githubusercontent.com/70964563/152940491-a4529472-99b1-4107-aa45-1edd9a41b875.png)
+
 3.ses grubu için bağlama sesinin yüksek oranda bozulmaya uğramadan geçtiği, ancak gitar sesinin bozulmaya uğradığı filtrenin, yüksek geçiren filtre olmasına karar verilmiştir. pyFDA arayüzünde tasarlanan filtrenin şekli Şekil 19’te görülmektedir.
+
+![image](https://user-images.githubusercontent.com/70964563/152940514-33214117-85ec-460a-9bf6-88902c2985c8.png)
+
 Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 20 ve Şekil 21’de görülmektedir.
+
+![image](https://user-images.githubusercontent.com/70964563/152940547-61ab789b-7663-42a1-9221-c20863bcf294.png)
+![image](https://user-images.githubusercontent.com/70964563/152940575-0bd658dd-152c-4f7b-ab4c-640d1cef3361.png)
+
 3.ses grubu için gitar sesinin yüksek oranda bozulmaya uğramadan geçtiği, oysaki bağlama sesinin ciddi seviyede bozulmaya uğradığı filtrenin, alçak geçiren filtre olmasına karar verilmiştir. pyFDA arayüzünde tasarlanan filtrenin şekli Şekil 22’da görülmektedir.
+
+![image](https://user-images.githubusercontent.com/70964563/152940629-d88f0cb1-bd73-4138-b726-aa3ba3398fd1.png)
+
 Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 23 ve Şekil 24‘de görülmektedir.
 
+![image](https://user-images.githubusercontent.com/70964563/152940658-a1cfb9b9-fb7d-42d0-82da-dee321c2931e.png)
+![image](https://user-images.githubusercontent.com/70964563/152940683-9289c073-01c3-4b27-acca-b6ac05888221.png)
 
 
 
