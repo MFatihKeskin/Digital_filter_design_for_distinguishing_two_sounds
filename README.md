@@ -1,5 +1,5 @@
 # Sound_analysis_and_digital_filter_design
-
+### NOTE:
 The project consists of 4 parts.
 Flow diagram:
 Part 1, AGF design to show that the sedge sound is damping
@@ -9,7 +9,7 @@ Part 4 applies the ygf designed and used in the second part to both the sedge an
 it is reserved for demonstration purposes.
 Note: transitions between parts have been edited this way to avoid errors if you run the code again.
 
-
+### NOT:
 Proje 4 parttan oluşmaktadır.
 Akış diagramı:
 Part 1, bağlama sesinin sönümlediğini göstermek için AGF tasarımını
@@ -18,3 +18,51 @@ Part 3, ilk partta tasarlanan ve kullanılan AGF'yi hem bağlama hem de gitar ü
 Part 4, ikinci partta tasarlanan ve kullanılan YGF'yi hem bağlama hem de gitar üzerine uygulayıp, çıkışta gitar sesinin bozulduğunu ama bağlama sesinin bozulmaya uğramadığını
 göstermek amaçlı olarak ayrılmıştır.
 NOT: Partlar arasındaki geçişler, kodu tekrar çalışıtırmanız durumunda hata alınmaması için böyle düzenlendi.
+
+## ÖZET
+Bu projede Python Programlama Dili ile ses analizi konusu üzerinde çalışılacaktır. Birbirinden farklı iki sesin (gitar ve bağlama) frekans uzayında genlik, enerji gibi bileşenleri incelenecektir. Uygun dijital filtreler tasarlanarak seslerin ayrımı yapılacaktır.
+
+## 1. Giriş
+Projede, birbirinden farklı iki sesin bilgisayar ortamında ayrımını yapabilmek amaçlanmıştır. Sesler, birbirlerinden farklı oldukları için farklı frekansa, genliğe veya enerjiye sahip olacaklardır. İlgili parametrelerden faydalanarak seslerin ayrı ayrı analizlerinin yapılması gerekecektir. Bu analizleri gerçekleştirebilmek için, çeşitli sayısal işaret işleme yöntemleri kullanılacaktır. Analizler sonucu uygun filtreleme tekniklerinden faydalanılarak, ihtiyaca uygun şekilde filtre tasarımı yapılıp, seslerin ayrımı sağlanmış olacaktır. Projede kullanılan ve ayrımı yapılacak olan ses grubu, gitar ve bağlamaya aittir.
+
+## 2. Deneyler ve Analiz
+Bilgisayar ortamında ses analizi için, Python Programlama Dili’nin bir aracı olan Jupyter Notebook kullanılacaktır. Analizlerin yapılabilmesi için, .wav formatındaki ses dosyaları Jupyter Notebook ortamına eklenmiştir. Uygun kod bloğu ile, ayrı ayrı eklenen ses dosyalarından ses işaretleri elde edilmiştir.
+Ses işaretlerinin Fourier Dönüşümü alınarak frekans uzayında incelenme yapılmasına imkan sağlanmıştır. Elde edilen Fourier Dönüşümü’nden işaretlerin genlik grafiği çizdirilmiştir. İki farklı işaretin de genlik grafikleri karşılaştırılarak bir işaretin ciddi anlamda bozulmaya uğramadan geçtiği fakat diğer işaretin ise büyük oranda bozulmaya uğrayacağı durumlar düşünülerek filtre tasarımı gerçekleştirilmiştir. Yani, her bir işarete özel filtre tasarlanmıştır.
+
+Filtre tasarımı, Python tabanlı bir GUI (Graphical User Interface) olan pyFDA ile, işaretin yoğunlukta bulunduğu değer aralıkları ve o değer aralıklarında almış olduğu genlik değerleri gibi parametreler göz önünde bulundurularak yapılmıştır. Tasarlanan filtreler her iki ses işareti için de denenmiş ve işarete uygun filtreden, o ses işaretinin geçtiği gözlemlenmiştir.
+
+Ayrık zamanlı işaretler tasarlanan filtrelerden geçirildikten sonra, çıkış işaretlerinin Fourier Dönüşümleri alınmıştır. Fourier Dönüşümleri’nden elde edilen genlik spektrumlarına göre, işaretlerin enerjisi hesaplanmıştır.
+Her ses grubu için ayrı ayrı analizler yapılmıştır. İlgili grafik ve filtre çıktıları ile tasarlanan filtrelerin parametreleri “2.1 Grafik, Tablo ve Şekiller” başlığı altında görülmektedir.
+
+• Birinci Ses Grubu (Leyla the Band – Yokluğunda)
+
+1.ses grubundaki gitar ve bağlamaya ait ses işaretlerinin frekans cevaplarının genlik grafikleri Şekil 1 ve Şekil 2’de görülmektedir.
+![image](https://user-images.githubusercontent.com/70964563/152939265-3b95489e-4dd6-4522-9a44-6008cce11c17.png)
+![image](https://user-images.githubusercontent.com/70964563/152939291-47ba9ee1-48cb-4fe2-b5d6-d0a0c2d0c378.png)
+
+1.ses grubu için bağlama sesinin yüksek oranda bozulmaya uğramadan geçtiği, lakin gitar sesinin bozulmaya uğradığı filtrenin, yüksek geçiren filtre olmasına karar verilmiştir. pyFDA arayüzünde tasarlanan filtrenin şekli Şekil 3’te görülmektedir.
+![image](https://user-images.githubusercontent.com/70964563/152939352-3a076b58-ce26-4eda-b8d3-a84309cc3c96.png)
+
+
+Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 4 ve Şekil 5’de görülmektedir.
+1.ses grubu için gitar sesinin yüksek oranda bozulmaya uğramadan geçtiği fakat bağlama sesinin ciddi seviyede bozulmaya uğradığı filtrenin, alçak geçiren filtre olmasına karar verilmiştir. pyFDA arayüzünde tasarlanan filtrenin şekli Şekil 6’da görülmektedir.
+
+
+Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 7 ve Şekil 8‘de görülmektedir.
+• İkinci Ses Grubu (Serkan Nişancı – Farketmez Hesaplaşırız)
+2.ses grubundaki gitar ve bağlamaya ait ses işaretlerinin frekans cevaplarına ait genlik grafikleri Şekil 9 ve Şekil 10’da görülmektedir.
+2.ses grubu için bağlama sesinin yüksek oranda bozulmaya uğramadan geçtiği ama gitar sesinin bozulmaya uğradığı filtrenin, alçak geçiren filtre olmasına karar verilmiştir. pyFDA arayüzünde tasarlanan filtrenin şekli Şekil 11’de görülmektedir.
+Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 12 ve Şekil 13’de görülmektedir.
+2.ses grubu için gitar sesinin yüksek oranda bozulmaya uğramadan geçtiği, lakin bağlama sesinin bozulmaya uğradığı filtrenin, yüksek geçiren filtre olmasına karar verilmiştir. pyFDA arayüzünde tasarlanan filtrenin şekli Şekil 14’te görülmektedir.
+Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 15 ve Şekil 16‘da görülmektedir.
+• Üçüncü Ses Grubu (Müslüm Gürses – İtirazım Var)
+3.ses grubundaki gitar ve bağlamaya ait ses işaretlerinin frekans cevaplarına ait genlik grafikleri Şekil 17 ve Şekil 18’de görülmektedir.
+3.ses grubu için bağlama sesinin yüksek oranda bozulmaya uğramadan geçtiği, ancak gitar sesinin bozulmaya uğradığı filtrenin, yüksek geçiren filtre olmasına karar verilmiştir. pyFDA arayüzünde tasarlanan filtrenin şekli Şekil 19’te görülmektedir.
+Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 20 ve Şekil 21’de görülmektedir.
+3.ses grubu için gitar sesinin yüksek oranda bozulmaya uğramadan geçtiği, oysaki bağlama sesinin ciddi seviyede bozulmaya uğradığı filtrenin, alçak geçiren filtre olmasına karar verilmiştir. pyFDA arayüzünde tasarlanan filtrenin şekli Şekil 22’da görülmektedir.
+Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 23 ve Şekil 24‘de görülmektedir.
+
+
+
+
+
