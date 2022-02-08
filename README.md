@@ -1,13 +1,4 @@
 # Sound_analysis_and_digital_filter_design
-### NOTE:
-The project consists of 4 parts.
-Flow diagram:
-Part 1, AGF design to show that the sedge sound is damping
-Part 2, YGF design to show that the guitar sound is damping
-Part 3 applies the AGF designed and used in the first part to both the sedge and the guitar, and the sedge sound is distorted at the exit, but the guitar sound is not distorted
-Part 4 applies the ygf designed and used in the second part to both the sedge and the guitar, and the guitar sound is distorted at the exit, but the sedge sound is not distorted
-it is reserved for demonstration purposes.
-Note: transitions between parts have been edited this way to avoid errors if you run the code again.
 
 ### NOT:
 Proje 4 parttan oluşmaktadır.
@@ -18,6 +9,16 @@ Part 3, ilk partta tasarlanan ve kullanılan AGF'yi hem bağlama hem de gitar ü
 Part 4, ikinci partta tasarlanan ve kullanılan YGF'yi hem bağlama hem de gitar üzerine uygulayıp, çıkışta gitar sesinin bozulduğunu ama bağlama sesinin bozulmaya uğramadığını
 göstermek amaçlı olarak ayrılmıştır.
 NOT: Partlar arasındaki geçişler, kodu tekrar çalışıtırmanız durumunda hata alınmaması için böyle düzenlendi.
+
+### NOTE:
+The project consists of 4 parts.
+Flow diagram:
+Part 1, AGF design to show that the sedge sound is damping
+Part 2, YGF design to show that the guitar sound is damping
+Part 3 applies the AGF designed and used in the first part to both the sedge and the guitar, and the sedge sound is distorted at the exit, but the guitar sound is not distorted
+Part 4 applies the ygf designed and used in the second part to both the sedge and the guitar, and the guitar sound is distorted at the exit, but the sedge sound is not distorted
+it is reserved for demonstration purposes.
+Note: transitions between parts have been edited this way to avoid errors if you run the code again.
 
 ## ÖZET
 Bu projede Python Programlama Dili ile ses analizi konusu üzerinde çalışılacaktır. Birbirinden farklı iki sesin (gitar ve bağlama) frekans uzayında genlik, enerji gibi bileşenleri incelenecektir. Uygun dijital filtreler tasarlanarak seslerin ayrımı yapılacaktır.
@@ -45,6 +46,13 @@ Her ses grubu için ayrı ayrı analizler yapılmıştır. İlgili grafik ve fil
 
 ![image](https://user-images.githubusercontent.com/70964563/152939352-3a076b58-ce26-4eda-b8d3-a84309cc3c96.png)
 
+1.ses grubu için tasarlanan yüksek geçiren filtrenin parametreleri aşağıda verilen tabloda (Tablo 1.) görülmektedir:
+
+![image](https://user-images.githubusercontent.com/70964563/152940831-1ed9581a-ea4a-450e-914c-461c4ece830d.png)
+
+1.ses grubu için tasarlanan alçak geçiren filtrenin parametreleri aşağıda verilen tabloda (Tablo 2.) görülmektedir:
+
+![image](https://user-images.githubusercontent.com/70964563/152940911-1a97d7e7-cfce-48aa-9a3e-4ac5244c45b2.png)
 
 Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 4 ve Şekil 5’de görülmektedir.
 
@@ -61,13 +69,7 @@ Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplar
 ![image](https://user-images.githubusercontent.com/70964563/152939656-b79651bc-cb5e-4c8b-a9aa-2aad86a4be4c.png)
 ![image](https://user-images.githubusercontent.com/70964563/152939689-b0b45357-5c46-4416-b7c5-bbd3dc6871b6.png)
 
-1.ses grubu için tasarlanan yüksek geçiren filtrenin parametreleri aşağıda verilen tabloda (Tablo 1.) görülmektedir:
 
-![image](https://user-images.githubusercontent.com/70964563/152940831-1ed9581a-ea4a-450e-914c-461c4ece830d.png)
-
-1.ses grubu için tasarlanan alçak geçiren filtrenin parametreleri aşağıda verilen tabloda (Tablo 2.) görülmektedir:
-
-![image](https://user-images.githubusercontent.com/70964563/152940911-1a97d7e7-cfce-48aa-9a3e-4ac5244c45b2.png)
 
 
 #### • İkinci Ses Grubu (Serkan Nişancı – Farketmez Hesaplaşırız)
