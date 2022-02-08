@@ -88,7 +88,7 @@ Sonuçlar incelendiğinde gitar sesinin enerjisinin bağlama sesinin enerjisine 
 
 
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 #### 2.2. İkinci Ses Grubu (Serkan Nişancı – Farketmez Hesaplaşırız)
@@ -146,7 +146,7 @@ Enerjiler arasındaki fark: 4.6138011175855125 Joule
 Sonuçlar incelendiğinde gitar sesinin enerjisinin bağlama sesinin enerjisine göre yüksek kaldığı görülmektedir.
 
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
