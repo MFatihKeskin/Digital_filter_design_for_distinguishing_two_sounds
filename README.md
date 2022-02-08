@@ -35,7 +35,7 @@ Filtre tasarımı, Python tabanlı bir GUI (Graphical User Interface) olan pyFDA
 Ayrık zamanlı işaretler tasarlanan filtrelerden geçirildikten sonra, çıkış işaretlerinin Fourier Dönüşümleri alınmıştır. Fourier Dönüşümleri’nden elde edilen genlik spektrumlarına göre, işaretlerin enerjisi hesaplanmıştır.
 Her ses grubu için ayrı ayrı analizler yapılmıştır. İlgili grafik ve filtre çıktıları ile tasarlanan filtrelerin parametreleri “2.1 Grafik, Tablo ve Şekiller” başlığı altında görülmektedir.
 
-#### • Birinci Ses Grubu (Leyla the Band – Yokluğunda)
+#### 2.1. Birinci Ses Grubu (Leyla the Band – Yokluğunda)
 
 1.ses grubundaki gitar ve bağlamaya ait ses işaretlerinin frekans cevaplarının genlik grafikleri Şekil 1 ve Şekil 2’de görülmektedir.
 
@@ -70,8 +70,28 @@ Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplar
 
 
 
+#### 1. Ses grubu için sonuçların analizi:
 
-#### • İkinci Ses Grubu (Serkan Nişancı – Farketmez Hesaplaşırız)
+1.bağlama sesini 1.gitar sesinden ayırt etmek için tasarlanan yüksek geçiren filtreden geçirilen ses işaretlerinin enerjileri ve bu enerjiler arasındaki fark, aşağıda görüldüğü gibidir:
+Gitar sesi enerjisi: 1.716972878405396 Joule
+Bağlama sesi enerjisi: 2.7013771588096795 Joule
+Enerjiler arasındaki fark: 0.9844042804042836 Joule
+
+Sonuçlar incelendiğinde bağlama sesinin enerjisinin gitar sesinin enerjisine göre yüksek kaldığı görülmektedir.
+
+1.gitar sesini 1.bağlama sesinden ayırt etmek için tasarlanan alçak geçiren filtreden geçirilen ses işaretlerinin enerjileri ve bu enerjiler arasındaki fark, aşağıda görüldüğü gibidir:
+Gitar sesi enerjisi: 21.365604998855453 Joule
+Bağlama sesi enerjisi 2.847591033916202 Joule
+Enerjiler arasındaki fark: 18.51801396493925 Joule
+
+Sonuçlar incelendiğinde gitar sesinin enerjisinin bağlama sesinin enerjisine göre oldukça yüksek kaldığı görülmektedir.
+
+
+
+
+
+
+#### 2.2. İkinci Ses Grubu (Serkan Nişancı – Farketmez Hesaplaşırız)
 
 2.ses grubundaki gitar ve bağlamaya ait ses işaretlerinin frekans cevaplarına ait genlik grafikleri Şekil 9 ve Şekil 10’da görülmektedir.
 
@@ -107,7 +127,30 @@ Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevapla
 ![image](https://user-images.githubusercontent.com/70964563/152940228-d9c19b62-f216-442c-b224-63609432110d.png)
 
 
-#### • Üçüncü Ses Grubu (Müslüm Gürses – İtirazım Var)
+#### 2. Ses grubu için sonuçların analizi:
+
+2.bağlama sesini 2.gitar sesinden ayırt etmek için tasarlanan alçak geçiren filtreden geçirilen ses işaretlerinin enerjileri ve bu enerjiler arasındaki fark, aşağıda görüldüğü gibidir:
+
+Gitar sesi enerjisi: 9.253783251498717 Joule
+Bağlama sesi enerjisi: 15.5124538255554886 Joule
+Enerjiler arasındaki fark: 6.258755004056169 Joule
+
+Sonuçlar incelendiğinde bağlama sesinin enerjisinin gitar sesinin enerjisine göre yüksek kaldığı görülmektedir.
+
+2.gitar sesini 2.bağlama sesinden ayırt etmek için tasarlanan yüksek geçiren filtreden geçirilen ses işaretlerinin enerjileri ve bu enerjiler arasındaki fark, aşağıda görüldüğü gibidir:
+
+Gitar sesi enerjisi: 5.783171688743165 Joule
+Bağlama sesi enerjisi 1.1893705711576523 Joule
+Enerjiler arasındaki fark: 4.6138011175855125 Joule
+
+Sonuçlar incelendiğinde gitar sesinin enerjisinin bağlama sesinin enerjisine göre yüksek kaldığı görülmektedir.
+
+
+
+
+
+
+#### 2.3. Üçüncü Ses Grubu (Müslüm Gürses – İtirazım Var)
 3.ses grubundaki gitar ve bağlamaya ait ses işaretlerinin frekans cevaplarına ait genlik grafikleri Şekil 17 ve Şekil 18’de görülmektedir.
 
 ![image](https://user-images.githubusercontent.com/70964563/152940467-5c878adc-2de7-4241-a3a4-5febdf51a7aa.png)
@@ -116,6 +159,10 @@ Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevapla
 3.ses grubu için bağlama sesinin yüksek oranda bozulmaya uğramadan geçtiği, ancak gitar sesinin bozulmaya uğradığı filtrenin, yüksek geçiren filtre olmasına karar verilmiştir. pyFDA arayüzünde tasarlanan filtrenin şekli Şekil 19’te görülmektedir.
 
 ![image](https://user-images.githubusercontent.com/70964563/152940514-33214117-85ec-460a-9bf6-88902c2985c8.png)
+
+3.ses grubu için tasarlanan yüksek geçiren filtrenin parametreleri aşağıda verilen tabloda (Tablo 5.) görülmektedir:
+
+![image](https://user-images.githubusercontent.com/70964563/152942959-7aa24dd1-2bf5-4dd1-a4bf-8bcb0f5f531e.png)
 
 Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 20 ve Şekil 21’de görülmektedir.
 
@@ -126,11 +173,59 @@ Yüksek geçiren filtrenin çıkışında görülen işaretlerin frekans cevapla
 
 ![image](https://user-images.githubusercontent.com/70964563/152940629-d88f0cb1-bd73-4138-b726-aa3ba3398fd1.png)
 
+3.ses grubu için tasarlanan alçak geçiren filtrenin parametreleri aşağıda verilen tabloda (Tablo 6.) görülmektedir:
+
+![image](https://user-images.githubusercontent.com/70964563/152943029-d1c3425b-2123-41f6-a17e-a5f1184cb7f0.png)
+
 Alçak geçiren filtrenin çıkışında görülen işaretlerin frekans cevaplarına ait genlik grafikleri, Şekil 23 ve Şekil 24‘de görülmektedir.
 
 ![image](https://user-images.githubusercontent.com/70964563/152940658-a1cfb9b9-fb7d-42d0-82da-dee321c2931e.png)
 ![image](https://user-images.githubusercontent.com/70964563/152940683-9289c073-01c3-4b27-acca-b6ac05888221.png)
 
+#### 3. Ses grubu için sonuçların analizi:
+
+3.bağlama sesini 3.gitar sesinden ayırt etmek için tasarlanan yüksek geçiren filtreden geçirilen ses işaretlerinin enerjileri ve bu enerjiler arasındaki fark, aşağıda görüldüğü gibidir:
+
+Gitar sesi enerjisi: 0.4908210972341997 Joule
+Bağlama sesi enerjisi: 9.188821906636914Joule
+Enerjiler arasındaki fark: 8.698000809402714 Joule
+
+Sonuçlar incelendiğinde bağlama sesinin enerjisinin gitar sesinin enerjisine göre yüksek kaldığı görülmektedir.
+
+3.gitar sesini 3.bağlama sesinden ayırt etmek için tasarlanan alçak geçiren filtreden geçirilen ses işaretlerinin enerjileri ve bu enerjiler arasındaki fark, aşağıda görüldüğü gibidir:
+
+Gitar sesi enerjisi: 27.40048824779398 Joule
+Bağlama sesi enerjisi 3.2728820435684467 Joule
+Enerjiler arasındaki fark: 24.127606204225533 Joule
+
+Sonuçlar incelendiğinde gitar sesinin enerjisinin bağlama sesinin enerjisine göre oldukça yüksek kaldığı görülmektedir.
 
 
+
+
+
+### 3. Sonuç ve Yorum
+Ses işaretlerinin frekans uzayındaki spektrumlarının incelenerek yapılan gözlemler sonucu uygun filtre seçimi ve bu filtrenin parametrelerinin belirlenmesi konusunda deneyim sahibi olundu.
+
+Her bir ses işaretine özel filtre tasarlandıktan sonra, bu filtrelerden aynı ses grubundaki bir diğer işaretin geçirilmesi için birden çok parametre ile çözüm önerisinde bulunuldu. Bu çözümler pyFDA üzerinde denenerek ilgili filtrenin testi sağlandı. En uygun sonuçları veren parametreler filtrenin tasarımında kullanıldı.
+
+Her bir ses işaretinin birden fazla filtre üzerinde denenmesinden dolayı çözüm önerilerindeki ortaya çıkan parametre fazlalığı, sağladığı avantajların yanı sıra sürecin uzamasına ve karmaşık hale gelmesine sebebiyet verdiği için işlemleri zorlaştırmıştır.
+Python tabanlı, ses ve müzik analizi için kullanılan Librosa paketi içerisinde bulunan Spektogram[1] ile daha hassas veriler elde dilip buna uygun filtreler tasarlanabilirdi.
+
+Bu çalışmada, gözlemlenen genlik spektrumlarına uygun olarak filtre tasarlanması, birbirinden farklı seslerin tasarlanmış filtreler ile ayrımının yapılması öğrenilmiştir. Analiz yapma konusunda ve ihtiyaç doğrultusunda uygun parametrelerin kullanılması ve bunların testinin gerçekleştirilmesi konusunda da bilgi sahibi olundu.
+
+[1]Spektogram: Belirli bir dalga formunda bulunan çeşitli frekanslarda bir sinyalin sinyal gücünü veya yüksekliğini temsil eden görseldir. Aynı zamanda enerji seviyelerini zaman içinde nasıl değiştiğini de gösterir.
+
+
+#### 3.1 Karşılaştırmalar ve Sürpriz Sonuçlar
+
+Her bir gruptaki gitar seslerine özel tasarlanan filtreler, bağlama sesleri üzerinde de denenmiş ve çıkış işaretleri karşılaştırılmıştır. Ayrıca gitar sesleri de bağlama seslerine özel tasarlanan filtrelerden geçirilmiş ve çıkış işaretleri karşılaştırılmıştır.
+
+Birinci ses grubu için, yüksek geçiren filtre çıkışında gitar sesine ait enerji ile bağlama sesine ait enerjilerin birbirine yakın olduğu görülmüştür.
+İkinci ses grubu için tasarlanan filtre yapılarının, birinci ses grubu için tasarlanan filtreler ile karşılaştırıldığında, tam zıt filtre yapılarına sahip olması gerektiği anlaşılmıştır.
+
+Örneğin, birinci ses grubundaki gitar sesini elde etmek için AGF tasarlanırken, ikinci ses grubundaki gitar sesini elde etmek için YGF tasarlanmıştır.
+Üçüncü ses grubundaki bağlama sesi için tasarlanan YGF ikinci ses grubundaki gitar sesi için tasarlanan YGF ile aynı parametrelere sahiptir.
+
+Sonuç olarak birbirinden farklı yapılara/parametrelere sahip 5 adet filtre tasarımı gerçekleştirilmiştir.
 
