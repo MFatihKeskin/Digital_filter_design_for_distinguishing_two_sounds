@@ -1,7 +1,7 @@
 # Sound_analysis_and_digital_filter_design
 
 ### NOT:
-Proje 4 parttan oluşmaktadır.
+Proje kodu(.rar dosyasında) 4 parttan oluşmaktadır. 
 Akış diagramı:
 Part 1, bağlama sesinin sönümlediğini göstermek için AGF tasarımını
 Part 2, gitar sesinin sönümlediğini göstermek için YGF tasarımını
@@ -11,7 +11,7 @@ göstermek amaçlı olarak ayrılmıştır.
 NOT: Partlar arasındaki geçişler, kodu tekrar çalışıtırmanız durumunda hata alınmaması için böyle düzenlendi.
 
 ### NOTE:
-The project consists of 4 parts.
+The projects code (.rar files) consists of 4 parts.
 Flow diagram:
 Part 1, AGF design to show that the sedge sound is damping
 Part 2, YGF design to show that the guitar sound is damping
